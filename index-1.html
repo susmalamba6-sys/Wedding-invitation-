@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khushbu weds Anand - Wedding Invitation</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: linear-gradient(to bottom right, #fff9f9, #f7e3eb);
+      font-family: 'Playfair Display', serif;
+      color: #3b2e2a;
+      overflow: hidden;
+    }
+
+    .page {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 40px;
+      position: relative;
+      border: 8px double #d4af37;
+      border-radius: 25px;
+      margin: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    }
+
+    .active {
+      display: flex;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 3.6em;
+      color: #b84c65;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 2px #d4af37;
+    }
+
+    h2, h3 {
+      margin: 10px 0;
+      color: #5a3d44;
+    }
+
+    .subtitle {
+      font-size: 1.2em;
+      color: #7a5563;
+      margin-bottom: 25px;
+      letter-spacing: 0.5px;
+    }
+
+    button {
+      background: linear-gradient(to right, #c24f6b, #d4778d);
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+      font-family: 'Playfair Display', serif;
+      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+    }
+
+    button:hover {
+      background: linear-gradient(to right, #a93f58, #c35e77);
+      transform: scale(1.05);
+    }
+
+    .glitter {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .sparkle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      width: 4px;
+      height: 4px;
+      animation: sparkle 4s linear infinite;
+    }
+
+    @keyframes sparkle {
+      0% { transform: translateY(0) scale(0); opacity: 1; }
+      50% { opacity: 0.9; }
+      100% { transform: translateY(600px) scale(1.4); opacity: 0; }
+    }
+
+    a.map-link {
+      color: #b84c65;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1em;
+      border-bottom: 2px solid #d4af37;
+      padding-bottom: 3px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1.1em;
+      color: #5a3d44;
+      font-weight: 600;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="glitter"></div>
+
+  <!-- Page 1: Welcome -->
+  <div class="page active" id="page1">
+    <h2>✨ Welcome ✨</h2>
+    <h1>The Bagdiya Family</h1>
+    <div class="subtitle">Invites You and Your Family To...</div>
+    <button onclick="nextPage(2)">Enter Invitation</button>
+  </div>
+
+  <!-- Page 2: Main Invitation -->
+  <div class="page" id="page2">
+    <h2>You are invited to the grand wedding of</h2>
+    <h1>Khushbu <span style="color:#a23953;">weds</span> Anand</h1>
+    <h3>On 25th November</h3>
+    <p class="subtitle">A day when two hearts unite as one, surrounded by blessings and joy.</p>
+    <button onclick="nextPage(3)">See Venue</button>
+  </div>
+
+  <!-- Page 3: Address and Thank You -->
+  <div class="page" id="page3">
+    <h2>Venue</h2>
+    <p><strong>Coordinates:</strong> 27.149167, 75.7195</p>
+    <p>
+      <a class="map-link" href="https://www.google.com/maps?q=27.149167,75.7195" target="_blank">
+        📍 View on Google Maps
+      </a>
+    </p>
+    <footer>
+      With love and blessings — The Bagdiya Family <br><br>
+      Thank You!
+    </footer>
+  </div>
+
+  <script>
+    let currentPage = 1;
+    function nextPage(num) {
+      document.getElementById(`page${currentPage}`).classList.remove('active');
+      document.getElementById(`page${num}`).classList.add('active');
+      currentPage = num;
+    }
+
+    // Glitter animation
+    const glitterContainer = document.querySelector('.glitter');
+    for (let i = 0; i < 80; i++) {
+      const sparkle = document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left = Math.random() * 100 + '%';
+      sparkle.style.animationDelay = Math.random() * 4 + 's';
+      sparkle.style.width = sparkle.style.height = Math.random() * 5 + 2 + 'px';
+      glitterContainer.appendChild(sparkle);
+    }
+  </script>
+</body>
+</html>
