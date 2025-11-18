@@ -1,181 +1,237 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khushbu weds Anand - Wedding Invitation</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap');
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+<meta charset="UTF-8">  
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  
+<title>Wedding Invitation – Khushbu & Anand</title>  
+<style>  
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap');
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+/* Global Reset */  
+* { margin: 0; padding: 0; box-sizing: border-box; }  
 
-    body {
-      background: linear-gradient(to bottom right, #fff9f9, #f7e3eb);
-      font-family: 'Playfair Display', serif;
-      color: #3b2e2a;
-      overflow: hidden;
-    }
+/* Fullscreen Background */  
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Playfair Display', serif;  
+  background: linear-gradient(to bottom, #f8f3ff, #f5e8ff, #f2e4ff);  
+  color: #543b61;  
+  overflow-x: hidden;  
+}
 
-    .page {
-      display: none;
-      height: 100vh;
-      width: 100vw;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      padding: 40px;
-      position: relative;
-      border: 8px double #d4af37;
-      border-radius: 25px;
-      margin: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
-    }
+/* Corner Hans */  
+.x;  
+  height: 110px;  
+  background-size: contain;  
+  background-repeat: no-repeat;  
+  z-index: 3;  
+}  
 
-    .active {
-      display: flex;
-    }
+.top-left {  
+  top: 0;  
+  left: 0;  
+  background-image: url('https://i.imgur.com/eqTaQ2G.png');  
+}  
 
-    h1 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 3.6em;
-      color: #b84c65;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 2px #d4af37;
-    }
+.top-right {  
+  top: 0;  
+  right: 0;  
+  background-image: url('https://i.imgur.com/eqTaQ2G.png');  
+}  
 
-    h2, h3 {
-      margin: 10px 0;
-      color: #5a3d44;
-    }
+/* Sections */  
+.section {  
+  width: 100%;  
+  min-height: 100vh; /* Full screen per section */  
+  padding: 60px 20px;  
+  text-align: center;  
+  position: relative;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}  
 
-    .subtitle {
-      font-size: 1.2em;
-      color: #7a5563;
-      margin-bottom: 25px;
-      letter-spacing: 0.5px;
-    }
+/* Titles */  
+.title {  
+  font-family: 'Great Vibes', cursive;  
+  font-size: 3.6rem;  
+  margin-bottom: 10px;  
+  color: #8c4bb8;  
+  text-shadow: 0 0 12px rgba(165,125,210,0.5);  
+}  
 
-    button {
-      background: linear-gradient(to right, #c24f6b, #d4778d);
-      color: white;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 30px;
-      font-size: 1em;
-      cursor: pointer;
-      transition: 0.3s;
-      font-family: 'Playfair Display', serif;
-      box-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
-    }
+.subtitle {  
+  font-size: 1.3rem;  
+  margin-bottom: 20px;  
+  color: #6a4d7b;  
+  font-weight: 600;  
+}  
 
-    button:hover {
-      background: linear-gradient(to right, #a93f58, #c35e77);
-      transform: scale(1.05);
-    }
+/* Names */  
+.name {  
+  font-size: 2.4rem;  
+  color: #7c3fa2;  
+  margin-top: 10px;  
+}  
 
-    .glitter {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      pointer-events: none;
-      z-index: 1;
-    }
+.parent {  
+  font-size: 1.1rem;  
+  margin-bottom: 20px;  
+  color: #5c456b;  
+}  
 
-    .sparkle {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      width: 4px;
-      height: 4px;
-      animation: sparkle 4s linear infinite;
-    }
+/* Divider */  
+.divider {  
+  width: 100%;  
+  height: 2px;  
+  background: linear-gradient(to right, transparent, #b088d4, transparent);  
+  margin: 40px 0;  
+}  
 
-    @keyframes sparkle {
-      0% { transform: translateY(0) scale(0); opacity: 1; }
-      50% { opacity: 0.9; }
-      100% { transform: translateY(600px) scale(1.4); opacity: 0; }
-    }
+/* Event Cards */  
+.event-card {  
+  width: 90%;  
+  max-width: 500px;
+  margin: 15px auto;  
+  padding: 18px;  
+  border-radius: 16px;  
+  background: rgba(255,255,255,0.7);  
+  border: 2px solid #c6a0e9;  
+  box-shadow: 0px 0px 15px rgba(168,125,210,0.3);  
+  font-size: 1.3rem;  
+}  
 
-    a.map-link {
-      color: #b84c65;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1.1em;
-      border-bottom: 2px solid #d4af37;
-      padding-bottom: 3px;
-    }
+/* Map Link */  
+.map-link {  
+  font-size: 1.3rem;  
+  color: #7b3eb2;  
+  font-weight: 700;  
+  border-bottom: 2px solid #b579e1;  
+  text-decoration: none;  
+}  
 
-    footer {
-      margin-top: 40px;
-      font-size: 1.1em;
-      color: #5a3d44;
-      font-weight: 600;
-    }
+.map-link:hover { opacity: 0.6; }  
 
-  </style>
-</head>
-<body>
-  <div class="glitter"></div>
+/* Glitter */  
+.glitter {  
+  position: fixed;  
+  top: 0; left: 0;  
+  width: 100%; height: 100%;  
+  pointer-events: none;  
+  z-index: 1;  
+}  
 
-  <!-- Page 1: Welcome -->
-  <div class="page active" id="page1">
-    <h2>✨ Welcome ✨</h2>
-    <h1>The Bagdiya Family</h1>
-    <div class="subtitle">Invites You and Your Family To...</div>
-    <button onclick="nextPage(2)">Enter Invitation</button>
-  </div>
+.sparkle {  
+  position: absolute;  
+  background: rgba(255,255,255,0.9);  
+  width: 5px; height: 5px;  
+  border-radius: 50%;  
+  animation: fall 6s linear infinite;  
+}  
 
-  <!-- Page 2: Main Invitation -->
-  <div class="page" id="page2">
-    <h2>You are invited to the grand wedding of</h2>
-    <h1>Khushbu <span style="color:#a23953;">weds</span> Anand</h1>
-    <h3>On 25th November</h3>
-    <p class="subtitle">A day when two hearts unite as one, surrounded by blessings and joy.</p>
-    <button onclick="nextPage(3)">See Venue</button>
-  </div>
+@keyframes fall {  
+  0% { transform: translateY(-20px) scale(0); opacity: 1; }  
+  100% { transform: translateY(120vh) scale(1.2); opacity: 0; }  
+}  
+</style>  
+</head>  
+<body>  
 
-  <!-- Page 3: Address and Thank You -->
-  <div class="page" id="page3">
-    <h2>Venue</h2>
-    <p><strong>Coordinates:</strong> 27.149167, 75.7195</p>
-    <p>
-      <a class="map-link" href="https://www.google.com/maps?q=27.149167,75.7195" target="_blank">
-        📍 View on Google Maps
-      </a>
-    </p>
-    <footer>
-      With love and blessings — The Bagdiya Family <br><br>
-      Thank You!
-    </footer>
-  </div>
+<!-- Corner Hangings -->  
+<div class="corner top-left"></div>  
+<div class="corner top-right"></div>  
 
-  <script>
-    let currentPage = 1;
-    function nextPage(num) {
-      document.getElementById(`page${currentPage}`).classList.remove('active');
-      document.getElementById(`page${num}`).classList.add('active');
-      currentPage = num;
-    }
+<div class="glitter"></div>  
 
-    // Glitter animation
-    const glitterContainer = document.querySelector('.glitter');
-    for (let i = 0; i < 80; i++) {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.left = Math.random() * 100 + '%';
-      sparkle.style.animationDelay = Math.random() * 4 + 's';
-      sparkle.style.width = sparkle.style.height = Math.random() * 5 + 2 + 'px';
-      glitterContainer.appendChild(sparkle);
-    }
-  </script>
-</body>
-</html>
+<!-- Section 1 -->  
+<div class="section">  
+  <div class="title">Welcome</div>  
+  <div class="subtitle">We joyfully invite you to the wedding of</div>  
+
+  <div class="name">Khushbu</div>  
+  <div class="parent">Daughter of <strong>Rekha Devi & Jagdish Bagdiya</strong></div>  
+
+  <div class="name" style="font-size:2.8rem; color:#b768d8;">Weds</div>  
+
+  <div class="name">Anand</div>  
+  <div class="parent">Son of <strong>Ganga Devi & Banwari Lal Ji</strong></div>  
+</div>  
+
+<div class="divider"></div>  
+
+<!-- Section 2 - Venue -->  
+<div class="section">  
+  <div class="title">Venue</div>  
+  <div class="subtitle">We would be blessed by your presence</div>  
+
+  <h3>📍 Coordinates</h3>  
+  <p style="font-size:1.4rem;margin:10px 0;">27.149167, 75.7195</p>  
+
+  <a class="map-link" href="https://www.google.com/maps?q=27.149167,75.7195" target="_blank">  
+    Open in Google Maps  
+  </a>  
+</div>  
+
+<div class="divider"></div>  
+
+<!-- Section 3 - Programs -->  
+<div class="section">  
+  <div class="title">Programs</div>  
+
+  <div class="event-card">  
+    <strong>Pile Chawal</strong><br>17 / 11 / 25 — 11:00 AM  
+  </div>  
+
+  <div class="event-card">  
+    <strong>Ban Sakdi</strong><br>21 / 11 / 25  
+  </div>  
+
+  <div class="event-card">  
+    <strong>Ladies Sangeet</strong><br>24 / 11 / 25 — 6:00 PM  
+  </div>  
+
+  <div class="event-card">  
+    <strong>Chak Bhat</strong><br>25 / 11 / 25 — 10:00 AM  
+  </div>  
+
+  <div class="event-card">  
+    <strong>Pratibhog</strong><br>25 / 11 / 25 — 5:15 PM  
+  </div>  
+</div>  
+
+<div class="divider"></div>  
+
+<!-- Final Section -->  
+<div class="section">  
+  <div class="title">You're Invited</div>  
+  <div class="subtitle">Join us to celebrate love, happiness, and togetherness</div>  
+
+  <p style="font-size:1.4rem;line-height:1.8;">  
+    With warm regards,<br>  
+    <strong>The Bagdiya & Pariwar Family</strong>  
+  </p>  
+
+  <p style="margin-top:25px;font-size:1.2rem;">  
+    Thank you for being a part of our joy ✨  
+  </p>  
+</div>  
+
+<script>  
+// Glitter Effect  
+const glitter = document.querySelector(".glitter");  
+for (let i = 0; i < 80; i++) {  
+  const s = document.createElement("div");  
+  s.classList.add("sparkle");  
+  s.style.left = Math.random()*100 + "%";  
+  s.style.animationDelay = Math.random()*6 + "s";  
+  let size = Math.random()*6 + 2;  
+  s.style.width = size + "px";  
+  s.style.height = size + "px";  
+  glitter.appendChild(s);  
+}  
+</script>  
+
+</body>  
+  </html>
