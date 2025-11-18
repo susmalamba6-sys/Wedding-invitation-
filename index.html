@@ -11,22 +11,30 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }  
 
 /* Fullscreen Background */  
-html, body {
-  height: 100%;
-  width: 100%;
+body {  
   font-family: 'Playfair Display', serif;  
   background: linear-gradient(to bottom, #f8f3ff, #f5e8ff, #f2e4ff);  
   color: #543b61;  
   overflow-x: hidden;  
-}
-
-/* Corner Hans */  
-.x;  
-  height: 110px;  
-  background-size: contain;  
-  background-repeat: no-repeat;  
-  z-index: 3;  
+  width: 100vw;  
 }  
+
+/* Decorative Borders */  
+.side-border {  
+  position: fixed;  
+  top: 0;  
+  width: 40px;  
+  height: 100vh;  
+  background-image: url('https://i.imgur.com/2DHhJ0a.png');  
+  background-size: cover;  
+  background-repeat: repeat-y;  
+  z-index: 2;  
+}  
+
+.left-border { left: 0; }  
+.right-border { right: 0; }  
+
+
 
 .top-left {  
   top: 0;  
@@ -40,17 +48,23 @@ html, body {
   background-image: url('https://i.imgur.com/eqTaQ2G.png');  
 }  
 
+/* (Sticker removed – no .couple image now) */
+.couple {
+  display: none;
+}
+
+@keyframes float {  
+  0% { transform: translateY(0);}  
+  50% { transform: translateY(-12px);}  
+  100% { transform: translateY(0);}  
+}  
+
 /* Sections */  
 .section {  
   width: 100%;  
-  min-height: 100vh; /* Full screen per section */  
   padding: 60px 20px;  
   text-align: center;  
   position: relative;  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }  
 
 /* Titles */  
@@ -93,7 +107,6 @@ html, body {
 /* Event Cards */  
 .event-card {  
   width: 90%;  
-  max-width: 500px;
   margin: 15px auto;  
   padding: 18px;  
   border-radius: 16px;  
@@ -139,6 +152,10 @@ html, body {
 </head>  
 <body>  
 
+<!-- Decorative Borders -->  
+<div class="side-border left-border"></div>  
+<div class="side-border right-border"></div>  
+
 <!-- Corner Hangings -->  
 <div class="corner top-left"></div>  
 <div class="corner top-right"></div>  
@@ -147,6 +164,9 @@ html, body {
 
 <!-- Section 1 -->  
 <div class="section">  
+
+  <!-- Sticker removed here -->
+
   <div class="title">Welcome</div>  
   <div class="subtitle">We joyfully invite you to the wedding of</div>  
 
@@ -157,6 +177,7 @@ html, body {
 
   <div class="name">Anand</div>  
   <div class="parent">Son of <strong>Ganga Devi & Banwari Lal Ji</strong></div>  
+
 </div>  
 
 <div class="divider"></div>  
@@ -234,4 +255,4 @@ for (let i = 0; i < 80; i++) {
 </script>  
 
 </body>  
-  </html>
+</html>
